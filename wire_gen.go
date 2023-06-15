@@ -12,9 +12,9 @@ import (
 
 // Injectors from wire.go:
 
-func InitializeService() services.Service {
+func InitializeService() (*services.Service, error) {
 	logger := services.ProvideLogger()
 	nService := services.ProvideNService()
 	service := services.ProvideService(logger, nService)
-	return service
+	return service, nil
 }

@@ -5,8 +5,8 @@ type Service struct {
 	NService NService
 }
 
-func ProvideService(l Logger, n NService) Service {
-	return Service{
+func ProvideService(l Logger, n NService) *Service {
+	return &Service{
 		Logger:   l,
 		NService: n,
 	}

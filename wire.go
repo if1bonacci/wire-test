@@ -7,11 +7,11 @@ import (
 	"github.com/google/wire"
 )
 
-func InitializeService() services.Service {
+func InitializeService() (*services.Service, error) {
 	wire.Build(
 		services.ProvideService,
 		services.ProvideLogger,
 		services.ProvideNService,
 	)
-	return services.Service{}
+	return &services.Service{}, nil
 }
